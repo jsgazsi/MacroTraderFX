@@ -5,7 +5,7 @@ import Macro_CSV_Lists
 Countries = Macro_CSV_Lists.Countries
 
 #Downlaod Path
-path = "../MacroTrader/MacroTraderFX/CSV_Data/{}"
+path = "../MacroTraderFX/CSV_Data/{}"
 
 #Grabs all the CSV data from the export links in the Countries List and saves them in the download path directory
 for Country in Countries:

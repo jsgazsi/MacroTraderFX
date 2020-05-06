@@ -13,7 +13,7 @@ import yfinance as yf
 #Macro Trader Test
 #import Macro_CSV_Lists
 
-path = "../MacroTraderFX/CSV_Data/"
+path = "..CSV_Data/"
 #This function gets the data for an economic indicator (e.g. GDP, Unemployment), and normalizes the data to it's Standard Score (Z-Score))
 def getData(str, inverse_correlation):
     #read in CSV data
@@ -67,7 +67,7 @@ def createCountryHelix(list):
 
 
 #These CSV files contain the list of macro economic indicators used for respective countries (where name corresponds to the raw file data in CSV_Data folder)
-fileListPath = '../MacroTraderFX/Indicator_Lists/'
+fileListPath = '..Indicator_Lists/'
 US_Files = np.genfromtxt(fileListPath + 'US_Files.csv', delimiter=',', dtype=str)
 EU_Files = np.genfromtxt(fileListPath + 'EU_Files.csv', delimiter=',', dtype=str)
 JP_Files = np.genfromtxt(fileListPath + 'JP_Files.csv', delimiter=',', dtype=str)
