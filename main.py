@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 import Macro
 
 
-#MacroTrader Testing a change , yet another change
+#MacroTraderFX Dashboard
 
 app = dash.Dash(__name__)
 server = app.server
