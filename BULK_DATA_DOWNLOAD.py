@@ -1,5 +1,10 @@
-import requests 
+import os
+import requests
 import Macro_CSV_Lists
+
+if not os.path.exists('CSV_Data'):
+    os.makedirs('CSV_Data')
+
 
 #Get Economic Data by countries from source file
 Countries = Macro_CSV_Lists.Countries
