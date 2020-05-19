@@ -1,6 +1,13 @@
 import os
+import shutil
 import requests
 import Macro_CSV_Lists
+
+if os.path.exists('CSV_Data (copy)'):
+    shutil.rmtree('CSV_Data (copy)')
+
+if os.path.exists('CSV_Data'):
+    os.rename('CSV_Data', 'CSV_Data (copy)')
 
 if not os.path.exists('CSV_Data'):
     os.makedirs('CSV_Data')
@@ -26,7 +33,6 @@ for Country in Countries:
                     print("Success.")
                 else:
                     print("Error Downloading file: " + link.split('/')[-3] + "_" + link.split('/')[-2] + ".csv" )
-
 
 #for Country in Countries:
 #    for link in Country:
