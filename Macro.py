@@ -187,13 +187,15 @@ NZ_TradeBalance = {'x': NZ_TB.index, 'y': NZ_TB, 'name': 'New Zealand', 'marker'
 CN_TradeBalance = {'x': CN_TB.index, 'y': CN_TB, 'name': 'China', 'marker': {'color': 'tan'}}
 
 #CFTC COT Reports (Commitment of Traders)
-EUR_COT = {'x': EUR_CFTC_COT.index, 'y': EUR_CFTC_COT, 'name': 'EUR: COT Report', 'marker': {'color': 'blue'}}
-JPY_COT = {'x': JPY_CFTC_COT.index, 'y': JPY_CFTC_COT, 'name': 'JPY: COT Report', 'marker': {'color': 'fuchsia'}}
-GBP_COT = {'x': GBP_CFTC_COT.index, 'y': GBP_CFTC_COT, 'name': 'GBP: COT Report', 'marker': {'color': 'silver'}}
-CAD_COT = {'x': CAD_CFTC_COT.index, 'y': CAD_CFTC_COT, 'name': 'CAD: COT Report', 'marker': {'color': 'orange'}}
-AUD_COT = {'x': AUD_CFTC_COT.index, 'y': AUD_CFTC_COT, 'name': 'AUD: COT Report', 'marker': {'color': 'red'}}
-CHF_COT = {'x': CHF_CFTC_COT.index, 'y': CHF_CFTC_COT, 'name': 'CHF: COT Report', 'marker': {'color': 'yellow'}}
-NZD_COT = {'x': NZD_CFTC_COT.index, 'y': NZD_CFTC_COT, 'name': 'NZD: COT Report', 'marker': {'color': 'turquoise'}}
+EUR_COT = {'x': EUR_CFTC_COT.index, 'y': EUR_CFTC_COT.ActualValue, 'name': 'EUR: COT Report', 'marker': {'color': 'blue'}}
+JPY_COT = {'x': JPY_CFTC_COT.index, 'y': JPY_CFTC_COT.ActualValue, 'name': 'JPY: COT Report', 'marker': {'color': 'fuchsia'}}
+GBP_COT = {'x': GBP_CFTC_COT.index, 'y': GBP_CFTC_COT.ActualValue, 'name': 'GBP: COT Report', 'marker': {'color': 'silver'}}
+CAD_COT = {'x': CAD_CFTC_COT.index, 'y': CAD_CFTC_COT.ActualValue, 'name': 'CAD: COT Report', 'marker': {'color': 'orange'}}
+AUD_COT = {'x': AUD_CFTC_COT.index, 'y': AUD_CFTC_COT.ActualValue, 'name': 'AUD: COT Report', 'marker': {'color': 'red'}}
+CHF_COT = {'x': CHF_CFTC_COT.index, 'y': CHF_CFTC_COT.ActualValue, 'name': 'CHF: COT Report', 'marker': {'color': 'yellow'}}
+NZD_COT = {'x': NZD_CFTC_COT.index, 'y': NZD_CFTC_COT.ActualValue, 'name': 'NZD: COT Report', 'marker': {'color': 'turquoise'}}
+
+
 
 #Importing currency data through Yahoo API
 start = "2007-02-01"

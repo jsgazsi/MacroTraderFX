@@ -44,13 +44,13 @@ all_options = {
     'SNB': Macro.SNB_IntRate,
     'RBNZ': Macro.RBNZ_IntRate,
     #CFTC - COT Reports
-    'EUR (Euro)': Macro.EUR_COT,
-    'JPY (Japanese Yen)': Macro.JPY_COT,
-    'GBP (British Pound)': Macro.GBP_COT,
-    'CAD (Canadian Dollar)': Macro.CAD_COT,
-    'AUD (Australian Dollar': Macro.AUD_COT,
-    'NZD (New Zealand Dollar': Macro.NZD_COT,
-    'CHF (Swiss Franc)': Macro.CHF_COT,    
+    'EUR_COT': Macro.EUR_COT,
+    'JPY_COT': Macro.JPY_COT,
+    'GBP_COT': Macro.GBP_COT,
+    'CAD_COT': Macro.CAD_COT,
+    'AUD_COT': Macro.AUD_COT,
+    'NZD_COT': Macro.NZD_COT,
+    'CHF_COT': Macro.CHF_COT,    
 }
 
 graph_height = 600
@@ -153,6 +153,25 @@ app.layout = html.Div([
     ),  
     dcc.Graph(id='Graph3', config={'scrollZoom': True}),
 
+
+    #COT Report Section
+    html.Label('Commitment of Traders Report (CFTC)'),
+    dcc.Dropdown(id='Dropdown_COT', style={'width': '100%'},
+        options=[
+            {'label': 'EUR (COT)', 'value': 'EUR_COT'},
+            {'label': 'JPY (COT)', 'value': 'JPY_COT'},
+            {'label': 'GBP (COT)', 'value': 'GBP_COT'},
+            {'label': 'CAD (COT)', 'value': 'CAD_COT'},
+            {'label': 'AUD (COT)', 'value': 'AUD_COT'},
+            {'label': 'NZD (COT)', 'value': 'NZD_COT'},
+            {'label': 'CHF (COT)', 'value': 'CHF_COT'},
+        ],
+        value = ['EUR_COT', 'JPY_COT', 'GBP_COT', 'CAD_COT', 'AUD_COT', 'NZD_COT', 'CHF_COT'],
+        multi = True
+    ),
+    dcc.Graph(id='Graph_COT', config={'scrollZoom': True}),
+
+
     #Interest Rates Section
     html.Label('Central Bank Interest Rates'),
     dcc.Dropdown(id='Dropdown_IntRates', style={'width': '100%'},
@@ -170,7 +189,10 @@ app.layout = html.Div([
         multi = True
     ),
     dcc.Graph(id='Graph_IntRates', config={'scrollZoom': True}),
+
+    
   
+
 ])
 
 #Callback for Graph1, Macroeconomic Z-Scores
@@ -531,6 +553,33 @@ def updateMacroDifferential(input_value, input_value2, checkbox):
                 side= "right"
             )
             
+        )
+    }    
+
+
+#Callback for Graph - Commitment of Traders Report
+@app.callback(
+    Output(component_id='Graph_COT', component_property='figure'),
+    [Input(component_id='Dropdown_COT', component_property= 'value')]
+)
+def updateCOT_Report(input_value):
+    traces = []
+    selected_plot = input_value
+    
+    for input_value in selected_plot:
+        traces.append(dict(
+            x = all_options[input_value]['x'],
+            y = all_options[input_value]['y'],
+            mode='lines',
+            name= all_options[input_value]['name'],
+            marker = all_options[input_value]['marker']
+        ))
+
+    return {
+        'data': traces,
+        'layout': go.Layout(
+            dragmode='pan',
+            height= graph_height, 
         )
     }    
 
