@@ -1,13 +1,57 @@
-from main import all_options
+#from main import all_options
 import Macro
-from main import currency_color
-from main import graph_height
+#from main import currency_color
+#from main import graph_height
 import plotly.graph_objects as go 
 
 #graph_height = 200
 #---------------------------
 #Functions for App Callbacks
 #---------------------------
+graph_height = 650
+currency_color = {'color': 'black'}
+
+all_options = {
+    #Country Macroeconomic Z-Score
+    'US_Macro': Macro.US_Macro,
+    'EU_Macro': Macro.EU_Macro,
+    'JP_Macro': Macro.JP_Macro,
+    'UK_Macro': Macro.UK_Macro,
+    'CA_Macro': Macro.CA_Macro,
+    'AU_Macro': Macro.AU_Macro,
+    'CH_Macro': Macro.CH_Macro,
+    'NZ_Macro': Macro.NZ_Macro,
+    'CN_Macro': Macro.CN_Macro,
+    #Indexes (i.e. country vs global average)
+    'US_Index': Macro.US_Index,
+    'EU_Index': Macro.EU_Index,
+    'JP_Index': Macro.JP_Index,
+    'UK_Index': Macro.UK_Index,
+    'CA_Index': Macro.CA_Index,
+    'AU_Index': Macro.AU_Index,
+    'CH_Index': Macro.CH_Index,
+    'NZ_Index': Macro.NZ_Index,
+    'CN_Index': Macro.CN_Index,
+    #Interest Rates
+    'FED': Macro.FED_IntRate,
+    'ECB': Macro.ECB_IntRate,
+    'BOJ': Macro.BOJ_IntRate,
+    'BOE': Macro.BOE_IntRate,
+    'BOC': Macro.BOC_IntRate,
+    'RBA': Macro.RBA_IntRate,
+    'SNB': Macro.SNB_IntRate,
+    'RBNZ': Macro.RBNZ_IntRate,
+    #CFTC - COT Reports
+    'EUR_COT': Macro.EUR_COT,
+    'JPY_COT': Macro.JPY_COT,
+    'GBP_COT': Macro.GBP_COT,
+    'CAD_COT': Macro.CAD_COT,
+    'AUD_COT': Macro.AUD_COT,
+    'NZD_COT': Macro.NZD_COT,
+    'CHF_COT': Macro.CHF_COT,    
+}
+
+
 
 def updateMacroScore(input_value):
     traces = []
