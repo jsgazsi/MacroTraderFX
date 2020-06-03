@@ -79,6 +79,17 @@ app.layout = html.Div([
         'color': '#7FDBFF'}
     ),
 
+    #Radio Button to select Macro Z-Score or Macro Index
+    dcc.RadioItems(id='radio_button_Macro_View',
+    options=[
+        {'label': 'Macroeconomic Z-Scores', 'value': 'MacroScore'},
+        {'label': 'Macro Index (i.e. Country vs Global Average)', 'value': 'MacroIndex'},
+    ],
+    value='MacroScore'
+    ),
+
+    
+
     #General Macro Z-Score Section
     html.Label('Macroeconomic Z-Scores'),
     dcc.Dropdown(id='dd_MacroScore', style={'width': '100%'},
@@ -250,5 +261,5 @@ def updateInterestRates(input_value):
 
 #RUN PROGRAM
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)
 
