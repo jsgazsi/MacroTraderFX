@@ -35,13 +35,13 @@ app.layout = html.Div([
     ),
 
     #Radio Button to select Macro Z-Score or Macro Index
-    dcc.RadioItems(id='radio_button_Macro_View',
-    options=[
-        {'label': 'Macroeconomic Z-Scores', 'value': 'MacroScore'},
-        {'label': 'Macro Index (i.e. Country vs Global Average)', 'value': 'MacroIndex'},
-    ],
-    value='MacroScore'
-    ),
+    #dcc.RadioItems(id='radio_button_Macro_View',
+    #options=[
+    #    {'label': 'Macroeconomic Z-Scores', 'value': 'MacroScore'},
+    #    {'label': 'Macro Index (i.e. Country vs Global Average)', 'value': 'MacroIndex'},
+    #],
+    #value='MacroScore'
+    #),
 
     
 
