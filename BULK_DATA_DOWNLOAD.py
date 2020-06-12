@@ -3,11 +3,11 @@ import shutil
 import requests
 import Macro_CSV_Lists
 
-if os.path.exists('CSV_Data_copy'):
-    shutil.rmtree('CSV_Data_copy')
-
-if os.path.exists('CSV_Data'):
-    os.rename('CSV_Data', 'CSV_Data_copy')
+#if os.path.exists('CSV_Data_copy'):
+#    shutil.rmtree('CSV_Data_copy')
+#
+#if os.path.exists('CSV_Data'):
+#    os.rename('CSV_Data', 'CSV_Data_copy')
 
 if not os.path.exists('CSV_Data'):
     os.makedirs('CSV_Data')

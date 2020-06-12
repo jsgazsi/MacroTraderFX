@@ -50,7 +50,7 @@ app.layout = html.Div([
     dcc.Dropdown(id='dd_MacroScore', style={'width': '100%'},
         options=[
             {'label': 'United States', 'value': 'US_Macro'},
-            {'label': 'European Union', 'value': 'EU_Macro'},
+            {'label': 'Euro Area', 'value': 'EU_Macro'},
             {'label': 'Japan', 'value': 'JP_Macro'},
             {'label': 'United Kingdom', 'value': 'UK_Macro'},
             {'label': 'Canada', 'value': 'CA_Macro'},
@@ -69,7 +69,7 @@ app.layout = html.Div([
     dcc.Dropdown(id='dd_MacroIndex', style={'width': '100%'},
         options=[
             {'label': 'United States', 'value': 'US_Index'},
-            {'label': 'European Union', 'value': 'EU_Index'},
+            {'label': 'Euro Area', 'value': 'EU_Index'},
             {'label': 'Japan', 'value': 'JP_Index'},
             {'label': 'United Kingdom', 'value': 'UK_Index'},
             {'label': 'Canada', 'value': 'CA_Index'},
@@ -88,7 +88,7 @@ app.layout = html.Div([
     dcc.Dropdown(id='dd_MacroIndexDiff_1', style={'display': 'inline-block', 'width': '51%'},
         options=[
             {'label': 'United States', 'value': 'US_Index'},
-            {'label': 'European Union', 'value': 'EU_Index'},
+            {'label': 'Euro Area', 'value': 'EU_Index'},
             {'label': 'Japan', 'value': 'JP_Index'},
             {'label': 'United Kingdom', 'value': 'UK_Index'},
             {'label': 'Canada', 'value': 'CA_Index'},
@@ -102,7 +102,7 @@ app.layout = html.Div([
     dcc.Dropdown(id='dd_MacroIndexDiff_2',style={'display': 'inline-block', 'width': '51%'},
         options=[
             {'label': 'United States', 'value': 'US_Index'},
-            {'label': 'European Union', 'value': 'EU_Index'},
+            {'label': 'Euro Area', 'value': 'EU_Index'},
             {'label': 'Japan', 'value': 'JP_Index'},
             {'label': 'United Kingdom', 'value': 'UK_Index'},
             {'label': 'Canada', 'value': 'CA_Index'},
@@ -122,7 +122,7 @@ app.layout = html.Div([
 
 
     #COT Report Section
-    html.Label('Commitment of Traders Report (CFTC)'),
+    html.Label('Commitment of Traders Report (CFTC) Non-commercial Positions (Institutional Money)'),
     dcc.Dropdown(id='dd_COT', style={'width': '100%'},
         options=[
             {'label': 'EUR (COT)', 'value': 'EUR_COT'},

@@ -145,7 +145,7 @@ NZD_CFTC_COT = getIndicator('new-zealand_cftc-nzd-non-commercial-net-positions.c
 #------------------------
 #Baseline Macrofundamental Z-Score Index for Countries (Z-Score average of multiple economic indicators)
 US_Macro = {'x': US.index, 'y': US, 'name': 'United States', 'marker': {'color': 'lime'}}
-EU_Macro = {'x': EU.index, 'y': EU, 'name': 'European Union', 'marker': {'color': 'blue'}}
+EU_Macro = {'x': EU.index, 'y': EU, 'name': 'Euro Area', 'marker': {'color': 'blue'}}
 JP_Macro = {'x': JP.index, 'y': JP, 'name': 'Japan', 'marker': {'color': 'fuchsia'}}
 UK_Macro = {'x': UK.index, 'y': UK, 'name': 'United Kingdom', 'marker': {'color': 'silver'}}
 CA_Macro = {'x': CA.index, 'y': CA, 'name': 'Canada', 'marker': {'color': 'orange'}}
@@ -156,7 +156,7 @@ CN_Macro = {'x': CN.index, 'y': CN, 'name': 'China', 'marker': {'color': 'tan'}}
 
 #Global Relative Strength Index (i.e. country - globalAverage)
 US_Index = {'x': US_Index_Score.index, 'y': US_Index_Score, 'name': 'United States', 'marker': {'color': 'lime'}}
-EU_Index = {'x': EU_Index_Score.index, 'y': EU_Index_Score, 'name': 'European Union', 'marker': {'color': 'blue'}}
+EU_Index = {'x': EU_Index_Score.index, 'y': EU_Index_Score, 'name': 'Euro Area', 'marker': {'color': 'blue'}}
 JP_Index = {'x': JP_Index_Score.index, 'y': JP_Index_Score, 'name': 'Japan', 'marker': {'color': 'fuchsia'}}
 UK_Index = {'x': UK_Index_Score.index, 'y': UK_Index_Score, 'name': 'United Kingdom', 'marker': {'color': 'silver'}}
 CA_Index = {'x': CA_Index_Score.index, 'y': CA_Index_Score, 'name': 'Canada', 'marker': {'color': 'orange'}}
@@ -167,7 +167,7 @@ CN_Index = {'x': CN_Index_Score.index, 'y': CN_Index_Score, 'name': 'China', 'ma
 
 #Central Bank Interest Rates
 FED_IntRate = {'x': US_IntRate.index, 'y': US_IntRate.ActualValue, 'name': 'United States', 'marker': {'color': 'lime'}}
-ECB_IntRate = {'x': EU_IntRate.index, 'y': EU_IntRate.ActualValue, 'name': 'European Union', 'marker': {'color': 'blue'}}
+ECB_IntRate = {'x': EU_IntRate.index, 'y': EU_IntRate.ActualValue, 'name': 'Euro Area', 'marker': {'color': 'blue'}}
 BOJ_IntRate = {'x': JP_IntRate.index, 'y': JP_IntRate.ActualValue, 'name': 'Japan', 'marker': {'color': 'fuchsia'}}
 BOE_IntRate = {'x': UK_IntRate.index, 'y': UK_IntRate.ActualValue, 'name': 'United Kingdom', 'marker': {'color': 'silver'}}
 BOC_IntRate = {'x': CA_IntRate.index, 'y': CA_IntRate.ActualValue, 'name': 'Canada', 'marker': {'color': 'orange'}}
@@ -177,7 +177,7 @@ RBNZ_IntRate = {'x': NZ_IntRate.index, 'y': NZ_IntRate.ActualValue, 'name': 'New
 
 #Nation's Trade Balances
 US_TradeBalance = {'x': US_TB.index, 'y': US_TB, 'name': 'United States', 'marker': {'color': 'lime'}}
-EU_TradeBalance = {'x': EU_TB.index, 'y': EU_TB, 'name': 'European Union', 'marker': {'color': 'blue'}}
+EU_TradeBalance = {'x': EU_TB.index, 'y': EU_TB, 'name': 'Euro Area', 'marker': {'color': 'blue'}}
 JP_TradeBalance = {'x': JP_TB.index, 'y': JP_TB, 'name': 'Japan', 'marker': {'color': 'fuchsia'}}
 UK_TradeBalance = {'x': UK_TB.index, 'y': UK_TB, 'name': 'United Kingdom', 'marker': {'color': 'silver'}}
 CA_TradeBalance = {'x': CA_TB.index, 'y': CA_TB, 'name': 'Canada', 'marker': {'color': 'orange'}}
