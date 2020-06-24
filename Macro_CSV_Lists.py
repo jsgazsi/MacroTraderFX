@@ -13,7 +13,6 @@ US = [
     "https://www.mql5.com/en/economic-calendar/united-states/michigan-consumer-sentiment/export",
     "https://www.mql5.com/en/economic-calendar/united-states/building-permits/export",
     "https://www.mql5.com/en/economic-calendar/united-states/fed-interest-rate-decision/export",
-    "https://www.mql5.com/en/economic-calendar/united-states/trade-balance/export",
 ]
 
 #Euro Zone
@@ -32,7 +31,6 @@ EU = [
     "https://www.mql5.com/en/economic-calendar/european-union/construction-output-yy/export",
     "https://www.mql5.com/en/economic-calendar/european-union/industrial-confidence-indicator/export",
     "https://www.mql5.com/en/economic-calendar/european-union/ecb-interest-rate-decision/export",
-    "https://www.mql5.com/en/economic-calendar/european-union/trade-balance-nsa/export",
     "https://www.mql5.com/en/economic-calendar/european-union/cftc-eur-non-commercial-net-positions/export",
 ]
 
@@ -43,7 +41,6 @@ JP = [
     "https://www.mql5.com/en/economic-calendar/japan/nikkei-manufacturing-pmi/export",
     "https://www.mql5.com/en/economic-calendar/japan/nikkei-services-pmi/export",
     "https://www.mql5.com/en/economic-calendar/japan/boj-interest-rate-decision/export",
-    "https://www.mql5.com/en/economic-calendar/japan/trade-balance/export",
     "https://www.mql5.com/en/economic-calendar/japan/cftc-jpy-non-commercial-net-positions/export",
 ]
 
@@ -54,7 +51,6 @@ UK = [
     "https://www.mql5.com/en/economic-calendar/united-kingdom/markit-manufacturing-pmi/export",
     "https://www.mql5.com/en/economic-calendar/united-kingdom/markit-services-pmi/export",
     "https://www.mql5.com/en/economic-calendar/united-kingdom/boe-interest-rate-decision/export",
-    "https://www.mql5.com/en/economic-calendar/united-kingdom/trade-balance/export",
     "https://www.mql5.com/en/economic-calendar/united-kingdom/cftc-gbp-non-commercial-net-positions/export", 
 ]
 
@@ -65,7 +61,6 @@ CA = [
     "https://www.mql5.com/en/economic-calendar/canada/markit-manufacturing-pmi/export",
     "https://www.mql5.com/en/economic-calendar/canada/ivey-pmi/export",
     "https://www.mql5.com/en/economic-calendar/canada/boc-interest-rate-decision/export",
-    "https://www.mql5.com/en/economic-calendar/canada/trade-balance/export",
     "https://www.mql5.com/en/economic-calendar/canada/cftc-cad-non-commercial-net-positions/export",   
 ]
 
@@ -76,7 +71,6 @@ AU = [
     "https://www.mql5.com/en/economic-calendar/australia/aig-manufacturing-index/export",
     "https://www.mql5.com/en/economic-calendar/australia/aig-services-index/export",
     "https://www.mql5.com/en/economic-calendar/australia/rba-interest-rate-decision/export",
-    "https://www.mql5.com/en/economic-calendar/australia/trade-balance/export",
     "https://www.mql5.com/en/economic-calendar/australia/cftc-aud-non-commercial-net-positions/export",
 ]
 
@@ -87,19 +81,20 @@ CH = [
     "https://www.mql5.com/en/economic-calendar/switzerland/procurech-manufacturing-pmi/export",
     "https://www.mql5.com/en/economic-calendar/switzerland/kof-economic-barometer/export",
     "https://www.mql5.com/en/economic-calendar/switzerland/snb-interest-rate-decision/export",
-    "https://www.mql5.com/en/economic-calendar/switzerland/trade-balance/export",
     "https://www.mql5.com/en/economic-calendar/switzerland/cftc-chf-non-commercial-net-positions/export",
 ]
 
 #New Zealand
 NZ = [
+    #Business Cycle Indicators
     "https://www.mql5.com/en/economic-calendar/new-zealand/gdp-qq/export",
     "https://www.mql5.com/en/economic-calendar/new-zealand/unemployment-rate/export",
     "https://www.mql5.com/en/economic-calendar/new-zealand/anz-activity-outlook/export",
     "https://www.mql5.com/en/economic-calendar/new-zealand/anz-business-confidence/export",
     "https://www.mql5.com/en/economic-calendar/new-zealand/anz-commodity-price-index-mm/export",
     "https://www.mql5.com/en/economic-calendar/new-zealand/rbnz-interest-rate-decision/export",
-    "https://www.mql5.com/en/economic-calendar/new-zealand/trade-balance/export",
+    "https://www.mql5.com/en/economic-calendar/new-zealand/businessnz-manufacturing-index/export",
+    #Stand Alone Indicator
     "https://www.mql5.com/en/economic-calendar/new-zealand/cftc-nzd-non-commercial-net-positions/export",
 ]
 
@@ -109,7 +104,6 @@ CN = [
     "https://www.mql5.com/en/economic-calendar/china/unemployment-rate/export",
     "https://www.mql5.com/en/economic-calendar/china/manufacturing-pmi/export",
     "https://www.mql5.com/en/economic-calendar/china/non-manufacturing-pmi/export",
-    "https://www.mql5.com/en/economic-calendar/china/trade-balance/export",
 ]
 
 #Germany

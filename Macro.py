@@ -38,6 +38,26 @@ def getData(str, inverse_correlation):
     #Create Dataframe
     return df
 
+def getNormalized(str):
+    #read in CSV data
+    df = pd.read_csv(path + str, delimiter='\t')
+    #Convert to datetime, then to period, then timestamp to get year and month only that is plottable
+    # -- df['Date'] = pd.to_datetime(df['Date']).dt.to_period('M').dt.to_timestamp().dt.strftime('%Y-%m') --Old method 
+    df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m')
+    #Set DataFrame to desired columns
+    df = df[['Date', 'ActualValue']]
+    #Keep only most recent date and data point for month, i.e. account for revisions, the new revised number overwrites the previous value for the month
+    df.drop_duplicates(subset ="Date", keep = "first", inplace = True) 
+    #Set the Date as the index
+    df = df.set_index('Date')
+    #Calculate zScore - This normalizes all the values for comparison
+    df.ActualValue = sp.stats.zscore(df.ActualValue)
+    #If the indicator is inversely correlated to economic activity (i.e. Unemployment) Correct the correlation by multiplying by -1
+    #if (inverse_correlation=='TRUE' or inverse_correlation =='True'):
+    #    df = df.multiply(-1)
+    #Create Dataframe
+    return df
+
 #This function gets the data for an economic indicator, Raw, not normalized (For Int Rates, COT reports, etc)
 def getIndicator(str):
     #read in CSV data
@@ -120,17 +140,6 @@ AU_IntRate = getIndicator('australia_rba-interest-rate-decision.csv')
 CH_IntRate = getIndicator('switzerland_snb-interest-rate-decision.csv')
 NZ_IntRate = getIndicator('new-zealand_rbnz-interest-rate-decision.csv')
 
-#Trade Balances
-US_TB = getIndicator('united-states_trade-balance.csv')
-EU_TB = getIndicator('european-union_trade-balance-nsa.csv')
-JP_TB = getIndicator('japan_trade-balance.csv')
-UK_TB = getIndicator('united-kingdom_trade-balance.csv')
-CA_TB = getIndicator('canada_trade-balance.csv')
-AU_TB = getIndicator('australia_trade-balance.csv')
-CH_TB = getIndicator('switzerland_trade-balance.csv')
-NZ_TB = getIndicator('new-zealand_trade-balance.csv')
-CN_TB = getIndicator('china_trade-balance.csv')
-
 #CFTC COT Reports (Commitment of Traders Reports)
 EUR_CFTC_COT = getIndicator('european-union_cftc-eur-non-commercial-net-positions.csv')
 JPY_CFTC_COT = getIndicator('japan_cftc-jpy-non-commercial-net-positions.csv')
@@ -175,17 +184,6 @@ RBA_IntRate = {'x': AU_IntRate.index, 'y': AU_IntRate.ActualValue, 'name': 'Aust
 SNB_IntRate = {'x': CH_IntRate.index, 'y': CH_IntRate.ActualValue, 'name': 'Switzerland', 'marker': {'color': 'yellow'}}
 RBNZ_IntRate = {'x': NZ_IntRate.index, 'y': NZ_IntRate.ActualValue, 'name': 'New Zealand', 'marker': {'color': 'turquoise'}}
 
-#Nation's Trade Balances
-US_TradeBalance = {'x': US_TB.index, 'y': US_TB, 'name': 'United States', 'marker': {'color': 'lime'}}
-EU_TradeBalance = {'x': EU_TB.index, 'y': EU_TB, 'name': 'Euro Area', 'marker': {'color': 'blue'}}
-JP_TradeBalance = {'x': JP_TB.index, 'y': JP_TB, 'name': 'Japan', 'marker': {'color': 'fuchsia'}}
-UK_TradeBalance = {'x': UK_TB.index, 'y': UK_TB, 'name': 'United Kingdom', 'marker': {'color': 'silver'}}
-CA_TradeBalance = {'x': CA_TB.index, 'y': CA_TB, 'name': 'Canada', 'marker': {'color': 'orange'}}
-AU_TradeBalance = {'x': AU_TB.index, 'y': AU_TB, 'name': 'Australia', 'marker': {'color': 'red'}}
-CH_TradeBalance = {'x': CH_TB.index, 'y': CH_TB, 'name': 'Switzerland', 'marker': {'color': 'yellow'}}
-NZ_TradeBalance = {'x': NZ_TB.index, 'y': NZ_TB, 'name': 'New Zealand', 'marker': {'color': 'turquoise'}}
-CN_TradeBalance = {'x': CN_TB.index, 'y': CN_TB, 'name': 'China', 'marker': {'color': 'tan'}}
-
 #CFTC COT Reports (Commitment of Traders)
 EUR_COT = {'x': EUR_CFTC_COT.index, 'y': EUR_CFTC_COT.ActualValue, 'name': 'EUR: COT Report', 'marker': {'color': 'blue'}}
 JPY_COT = {'x': JPY_CFTC_COT.index, 'y': JPY_CFTC_COT.ActualValue, 'name': 'JPY: COT Report', 'marker': {'color': 'fuchsia'}}
@@ -195,6 +193,27 @@ AUD_COT = {'x': AUD_CFTC_COT.index, 'y': AUD_CFTC_COT.ActualValue, 'name': 'AUD:
 CHF_COT = {'x': CHF_CFTC_COT.index, 'y': CHF_CFTC_COT.ActualValue, 'name': 'CHF: COT Report', 'marker': {'color': 'yellow'}}
 NZD_COT = {'x': NZD_CFTC_COT.index, 'y': NZD_CFTC_COT.ActualValue, 'name': 'NZD: COT Report', 'marker': {'color': 'turquoise'}}
 
+#TESTING NEW DATA
+#US_TB = getNormalized('united-states_trade-balance.csv')
+#EU_TB = getNormalized('european-union_trade-balance-nsa.csv')
+#JP_TB = getNormalized('japan_trade-balance.csv')
+#UK_TB = getNormalized('united-kingdom_trade-balance.csv')
+#CA_TB = getNormalized('canada_trade-balance.csv')
+#AU_TB = getNormalized('australia_trade-balance.csv')
+#CH_TB = getNormalized('switzerland_trade-balance.csv')
+#NZ_TB = getNormalized('new-zealand_trade-balance.csv')
+#CN_TB = getNormalized('china_trade-balance.csv')
+
+#Nation's TESTING NEW DATA
+#US_TradeBalance = {'x': US_TB.index, 'y': US_TB.ActualValue, 'name': 'United States', 'marker': {'color': 'lime'}}
+#EU_TradeBalance = {'x': EU_TB.index, 'y': EU_TB.ActualValue, 'name': 'Euro Area', 'marker': {'color': 'blue'}}
+#JP_TradeBalance = {'x': JP_TB.index, 'y': JP_TB.ActualValue, 'name': 'Japan', 'marker': {'color': 'fuchsia'}}
+#UK_TradeBalance = {'x': UK_TB.index, 'y': UK_TB.ActualValue, 'name': 'United Kingdom', 'marker': {'color': 'silver'}}
+#CA_TradeBalance = {'x': CA_TB.index, 'y': CA_TB.ActualValue, 'name': 'Canada', 'marker': {'color': 'orange'}}
+#AU_TradeBalance = {'x': AU_TB.index, 'y': AU_TB.ActualValue, 'name': 'Australia', 'marker': {'color': 'red'}}
+#CH_TradeBalance = {'x': CH_TB.index, 'y': CH_TB.ActualValue, 'name': 'Switzerland', 'marker': {'color': 'yellow'}}
+#NZ_TradeBalance = {'x': NZ_TB.index, 'y': NZ_TB.ActualValue, 'name': 'New Zealand', 'marker': {'color': 'turquoise'}}
+#CN_TradeBalance = {'x': CN_TB.index, 'y': CN_TB.ActualValue, 'name': 'China', 'marker': {'color': 'tan'}}
 
 
 #Importing currency data through Yahoo API
@@ -203,75 +222,5 @@ start = "2007-02-01"
 def getCurrencyPrice(str):
     currencyPrice = yf.download(str, start, interval='1wk')
     return currencyPrice
-
-#TODO: FOR FUTURE DOWNLOADING INTO CSV FILES
-#Currencies
-#usdcad = getCurrencyPrice('CAD=X')
-#usdjpy = getCurrencyPrice('JPY=X')
-#usdchf = getCurrencyPrice('CHF=X')
-#usdcny = getCurrencyPrice('CNY=X')
-#eurusd = getCurrencyPrice('EURUSD=X')
-#euraud = getCurrencyPrice('EURAUD=X')
-#eurcad = getCurrencyPrice('EURCAD=X')
-#eurjpy = getCurrencyPrice('EURJPY=x')
-#eurgbp = getCurrencyPrice('EURGBP=X')
-#eurchf = getCurrencyPrice('EURCHF=X')
-#eurnzd = getCurrencyPrice('EURNZD=X')
-#eurcny = getCurrencyPrice('EURCNY=X')
-#audusd = getCurrencyPrice('AUDUSD=X')
-#audcad = getCurrencyPrice('AUDCAD=X')
-#audjpy = getCurrencyPrice('AUDJPY=X')
-#audchf = getCurrencyPrice('AUDCHF=X')
-#audnzd = getCurrencyPrice('AUDNZD=X')
-#audcny = getCurrencyPrice('AUDCNY=X')
-#gbpaud = getCurrencyPrice('GBPAUD=X')
-#gbpcad = getCurrencyPrice('GBPCAD=X')
-#gbpjpy = getCurrencyPrice('GBPJPY=X')
-#gbpusd = getCurrencyPrice('GBPUSD=X')
-#gbpchf = getCurrencyPrice('GBPCHF=X')
-#gbpnzd = getCurrencyPrice('GBPNZD=X')
-#gbpcny = getCurrencyPrice('GBPCNY=X')
-#cadjpy = getCurrencyPrice('CADJPY=X')
-#cadchf = getCurrencyPrice('CADCHF=X')
-#cadcny = getCurrencyPrice('CADCNY=X')
-#chfjpy = getCurrencyPrice('CHFJPY=X')
-#chfcny = getCurrencyPrice('CHFCNY=X')
-#nzdusd = getCurrencyPrice('NZDUSD=X')
-#nzdjpy = getCurrencyPrice('NZDJPY=X')
-#nzdcad = getCurrencyPrice('NZDCAD=X')
-#nzdchf = getCurrencyPrice('NZDCHF=X')
-#nzdcny = getCurrencyPrice('NZDCNY=X')
-#cnyjpy = getCurrencyPrice('CNYJPY=X')
-
-#Currency Plots         ***NOT NEEDED?***
-#USDCAD = {'x': usdcad.index, 'y': usdcad, 'name':'USD/CAD'}
-#USDJPY = {'x': usdjpy.index, 'y': usdjpy, 'name':'USD/JPY'}
-#USDCHF = {'x': usdchf.index, 'y': usdchf, 'name':'USD/CHF'}
-#EURUSD = {'x': eurusd.index, 'y': eurusd, 'name':'EUR/USD'}
-#EURAUD = {'x': euraud.index, 'y': euraud, 'name':'EUR/AUD'}
-#EURCAD = {'x': eurcad.index, 'y': eurcad, 'name':'EUR/CAD'}
-#EURJPY = {'x': eurjpy.index, 'y': eurjpy, 'name':'EUR/JPY'}
-#EURGBP = {'x': eurgbp.index, 'y': eurgbp, 'name':'EUR/GBP'}
-#EURCHF = {'x': eurchf.index, 'y': eurchf, 'name':'EUR/CHF'}
-#EURNZD = {'x': eurnzd.index, 'y': eurnzd, 'name':'EUR/NZD'}
-#AUDUSD = {'x': audusd.index, 'y': audusd, 'name':'AUD/USD'}
-#AUDCAD = {'x': audcad.index, 'y': audcad, 'name':'AUD/CAD'}
-#AUDJPY = {'x': audjpy.index, 'y': audjpy, 'name':'AUD/JPY'}
-#AUDCHF = {'x': audchf.index, 'y': audchf, 'name':'AUD/CHF'}
-#AUDNZD = {'x': audnzd.index, 'y': audnzd, 'name':'AUD/NZD'}
-#GBPAUD = {'x': gbpaud.index, 'y': gbpaud, 'name':'GBP/AUD'}
-#GBPCAD = {'x': gbpcad.index, 'y': gbpcad, 'name':'GBP/CAD'}
-#GBPJPY = {'x': gbpjpy.index, 'y': gbpjpy, 'name':'GBP/JPY'}
-#GBPUSD = {'x': gbpusd.index, 'y': gbpusd, 'name':'GBP/USD'}
-#GBPCHF = {'x': gbpchf.index, 'y': gbpchf, 'name':'GBP/CHF'}
-#GBPNZD = {'x': gbpnzd.index, 'y': gbpnzd, 'name':'GBP/NZD'}
-#CADJPY = {'x': cadjpy.index, 'y': cadjpy, 'name':'CAD/JPY'}
-#CADCHF = {'x': cadchf.index, 'y': cadchf, 'name':'CAD/CHF'}
-#CHFJPY = {'x': chfjpy.index, 'y': chfjpy, 'name':'CHF/JPY'}
-#NZDJPY = {'x': nzdjpy.index, 'y': nzdjpy, 'name':'NZD/JPY'}
-#NZDUSD = {'x': nzdusd.index, 'y': nzdusd, 'name':'NZD/USD'}
-#NZDCAD = {'x': nzdcad.index, 'y': nzdcad, 'name':'NZD/CAD'}
-#NZDCHF = {'x': nzdchf.index, 'y': nzdchf, 'name':'NZD/CHF'}
-
 
 

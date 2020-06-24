@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 #---------------------------
 #Functions for App Callbacks
 #---------------------------
-graph_height = 650
+graph_height = 750
 currency_color = {'color': 'black'}
 
 all_options = {
@@ -48,7 +48,17 @@ all_options = {
     'CAD_COT': Macro.CAD_COT,
     'AUD_COT': Macro.AUD_COT,
     'NZD_COT': Macro.NZD_COT,
-    'CHF_COT': Macro.CHF_COT,    
+    'CHF_COT': Macro.CHF_COT,   
+    #TESTING TODO change to TESTING DATA and see what happens
+    #'US_Trade': Macro.US_TradeBalance,
+    #'EU_Trade': Macro.EU_TradeBalance,
+    #'JP_Trade': Macro.JP_TradeBalance,
+    #'UK_Trade': Macro.UK_TradeBalance,
+    #'CA_Trade': Macro.CA_TradeBalance,
+    #'AU_Trade': Macro.AU_TradeBalance,
+    #'CH_trade': Macro.CH_TradeBalance,
+    #'NZ_Trade': Macro.NZ_TradeBalance,
+    #'CN_Trade': Macro.CN_TradeBalance,
 }
 
 
@@ -396,6 +406,27 @@ def updateMacroDifferential(input_value, input_value2, checkbox):
     }    
 
 def updateCOT_Report(input_value):
+    traces = []
+    selected_plot = input_value
+    
+    for input_value in selected_plot:
+        traces.append(dict(
+            x = all_options[input_value]['x'],
+            y = all_options[input_value]['y'],
+            mode='lines',
+            name= all_options[input_value]['name'],
+            marker = all_options[input_value]['marker']
+        ))
+
+    return {
+        'data': traces,
+        'layout': go.Layout(
+            dragmode='pan',
+            height= graph_height, 
+        )
+    }    
+
+def updateTradeBalance(input_value):
     traces = []
     selected_plot = input_value
     
