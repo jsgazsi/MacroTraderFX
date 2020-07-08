@@ -22,6 +22,7 @@ all_options = {
     'CH_Macro': Macro.CH_Macro,
     'NZ_Macro': Macro.NZ_Macro,
     'CN_Macro': Macro.CN_Macro,
+    'Global_Average': Macro.GlobalAverage_Macro,
     #Indexes (i.e. country vs global average)
     'US_Index': Macro.US_Index,
     'EU_Index': Macro.EU_Index,
@@ -108,22 +109,27 @@ def updateMacroIndex(input_value):
 def updateMacroDifferential(input_value, input_value2, checkbox):
     traces = []
     #for input_value in selected_plot:
+    differential = Macro.createIndexScore(all_options[input_value]['y'], all_options[input_value2]['y'])
+    differential2 = Macro.createIndexScore(all_options[input_value2]['y'], all_options[input_value]['y'])
+
     traces.append(dict(
-        x = all_options[input_value]['x'],
-        y = all_options[input_value]['y'] - all_options[input_value2]['y'],
+        x = differential.index,
+        y = differential,
         mode='lines',
         name= all_options[input_value]['name'],
         marker = all_options[input_value]['marker'],   
         )
     )
     traces.append(dict(
-        x = all_options[input_value2]['x'],
-        y = all_options[input_value2]['y'] - all_options[input_value]['y'],
+        x = differential2.index,
+        y = differential2,
         mode='lines',
         name= all_options[input_value2]['name'],
         marker = all_options[input_value2]['marker'],
         )
     )
+    
+    
     
     #Logic to auto populate correct currency to graph
     if (input_value == 'US_Index' or input_value == 'CA_Index') and (input_value2 == 'US_Index' or input_value2 == 'CA_Index'):

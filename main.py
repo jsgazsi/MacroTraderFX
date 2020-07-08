@@ -58,8 +58,9 @@ app.layout = html.Div([
             {'label': 'Switzerland', 'value': 'CH_Macro'},
             {'label': 'New Zealand', 'value': 'NZ_Macro'},
             {'label': 'China', 'value': 'CN_Macro'},
+            {'label': 'Global Average', 'value': 'Global_Average'},
         ],
-        value = ['US_Macro', 'EU_Macro'],
+        value = ['US_Macro', 'EU_Macro', 'Global_Average'],
         multi = True
     ),
     dcc.Graph(id='MacroScore', config={'scrollZoom': True}),

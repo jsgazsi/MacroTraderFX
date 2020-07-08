@@ -17,77 +17,71 @@ import yfinance as yf
 
 #path = "../MacroTraderFX/CSV_Data/"
 path = 'CSV_Data/'
+
 #This function gets the data for an economic indicator (e.g. GDP, Unemployment), and normalizes the data to it's Standard Score (Z-Score))
 def getData(str, inverse_correlation):
-    #read in CSV data
     df = pd.read_csv(path + str, delimiter='\t')
-    #Convert to datetime, then to period, then timestamp to get year and month only that is plottable
-    # -- df['Date'] = pd.to_datetime(df['Date']).dt.to_period('M').dt.to_timestamp().dt.strftime('%Y-%m') --Old method 
-    df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m')
-    #Set DataFrame to desired columns
+    df['Date'] = pd.to_datetime(df['Date'])   #####.dt.strftime('%Y-%m')
     df = df[['Date', 'ActualValue']]
-    #Keep only most recent date and data point for month, i.e. account for revisions, the new revised number overwrites the previous value for the month
-    df.drop_duplicates(subset ="Date", keep = "first", inplace = True) 
-    #Set the Date as the index
     df = df.set_index('Date')
-    #Calculate zScore - This normalizes all the values for comparison
-    df.ActualValue = sp.stats.zscore(df.ActualValue)
+    df.ActualValue = df.apply(lambda x: (x-x.expanding().mean())/x.expanding().std())
+    #df.ActualValue = sp.stats.zscore(df.ActualValue)
+    #data_zscore=df.apply(lambda x: (x-x.expanding().mean())/x.expanding().std())
     #If the indicator is inversely correlated to economic activity (i.e. Unemployment) Correct the correlation by multiplying by -1
-    if (inverse_correlation=='TRUE' or inverse_correlation =='True'):
+    if (inverse_correlation=='TRUE'):
         df = df.multiply(-1)
-    #Create Dataframe
     return df
 
 def getNormalized(str):
-    #read in CSV data
     df = pd.read_csv(path + str, delimiter='\t')
-    #Convert to datetime, then to period, then timestamp to get year and month only that is plottable
-    # -- df['Date'] = pd.to_datetime(df['Date']).dt.to_period('M').dt.to_timestamp().dt.strftime('%Y-%m') --Old method 
-    df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m')
-    #Set DataFrame to desired columns
+    df['Date'] = pd.to_datetime(df['Date'])  
     df = df[['Date', 'ActualValue']]
-    #Keep only most recent date and data point for month, i.e. account for revisions, the new revised number overwrites the previous value for the month
-    df.drop_duplicates(subset ="Date", keep = "first", inplace = True) 
-    #Set the Date as the index
     df = df.set_index('Date')
-    #Calculate zScore - This normalizes all the values for comparison
     df.ActualValue = sp.stats.zscore(df.ActualValue)
     #If the indicator is inversely correlated to economic activity (i.e. Unemployment) Correct the correlation by multiplying by -1
-    #if (inverse_correlation=='TRUE' or inverse_correlation =='True'):
+    #if (inverse_correlation=='TRUE'):
     #    df = df.multiply(-1)
-    #Create Dataframe
     return df
 
 #This function gets the data for an economic indicator, Raw, not normalized (For Int Rates, COT reports, etc)
 def getIndicator(str):
-    #read in CSV data
     df = pd.read_csv(path + str, delimiter='\t')
-    #Convert to datetime
     df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')
-    #Set DataFrame to desired columns
     df = df[['Date', 'ActualValue']]
-    #Set the Date as the index
     df = df.set_index('Date')
     return df
 
 #Function Takes all the Macro indicators in the list, and merges them into a single DataFrame, then averages all the normalized values
 #into a single value (i.e. an average of economic health)
 def createCountryHelix(list):
-    #create blank DataFrame to hold contents
     merged = pd.DataFrame()
     #Loop through all the indicators from the list, call the getData on each indicator to retrieve and process/normalize the data
     for i in list:
         indicator = getData(i[0], i[1])
         #Add the normalized data from new indicator onto the DataFrame
         merged = pd.merge(merged, indicator, right_index=True, left_index=True, how = 'outer')
-    #Some months may be skipped in the data. Forward fill the data so that the previous month's value is retained until a new value is populated
-    #This also keeps this current months date peroid populated with lasts month's data until we get this month's economic release of that figure
-    merged = merged.ffill(axis=0)
-    #Average all normalized indicators. Forward fill ensures current month's rolling average is based on all most recent data for all indicators
+    merged = merged.ffill(axis=0) 
     average = merged.mean(axis=1)
     return average
 
+def createGlobalAverage(economies):
+    merged = pd.DataFrame()
+    #Loop through all the indicators from the list, call the getData on each indicator to retrieve and process/normalize the data
+    for country in economies:
+        indicator = country
+        #Add the normalized data from new indicator onto the DataFrame
+        merged = pd.merge(merged, indicator.to_frame(), right_index=True, left_index=True, how = 'outer')
+    merged = merged.ffill(axis=0) 
+    average = merged.mean(axis=1)
+    return average
 
+#Country - Country2 (or global average)
+def createIndexScore(country, country2):
+    merged = pd.DataFrame()
+    merged = pd.merge(country.to_frame(), country2.to_frame(), right_index=True, left_index=True, how = 'outer')
+    merged = merged.ffill(axis=0) 
+    differential = merged['0_x'] - merged['0_y']
+    return differential
 
 #These CSV files contain the list of macro economic indicators used for respective countries (where name corresponds to the raw file data in CSV_Data folder)
 #fileListPath = '../MacroTraderFX/Indicator_Lists/'
@@ -113,22 +107,23 @@ CH = createCountryHelix(CH_Files)   #Switzerland
 NZ = createCountryHelix(NZ_Files)   #New Zealand
 CN = createCountryHelix(CN_Files)   #China
 
+allEconomies = [US, EU, JP, UK, CA, AU, CH, NZ, CN]
+
 
 #Global Average
-numberOfEconomies = 6
-globalAverage = ((US + EU + JP + UK + CA + AU) / numberOfEconomies)
+globalAverage = createGlobalAverage(allEconomies)
 
 
-#Calculation for Economic Relative Global Strength Indexes
-US_Index_Score = US - globalAverage
-EU_Index_Score = EU - globalAverage
-JP_Index_Score = JP - globalAverage
-UK_Index_Score = UK - globalAverage
-CA_Index_Score = CA - globalAverage
-AU_Index_Score = AU - globalAverage
-CH_Index_Score = CH - globalAverage
-NZ_Index_Score = NZ - globalAverage
-CN_Index_Score = CN - globalAverage
+#Calculation for Economic Relative Global Strength Indexes (Country - globalAverage)
+US_Index_Score = createIndexScore(US, globalAverage)
+EU_Index_Score = createIndexScore(EU, globalAverage)
+JP_Index_Score = createIndexScore(JP, globalAverage)
+UK_Index_Score = createIndexScore(UK, globalAverage)
+CA_Index_Score = createIndexScore(CA, globalAverage)
+AU_Index_Score = createIndexScore(AU, globalAverage)
+CH_Index_Score = createIndexScore(CH, globalAverage)
+NZ_Index_Score = createIndexScore(NZ, globalAverage)
+CN_Index_Score = createIndexScore(CN, globalAverage)
 
 #Central Bank Interest Rates
 US_IntRate = getIndicator('united-states_fed-interest-rate-decision.csv')
@@ -162,6 +157,7 @@ AU_Macro = {'x': AU.index, 'y': AU, 'name': 'Australia', 'marker': {'color': 're
 CH_Macro = {'x': CH.index, 'y': CH, 'name': 'Switzerland', 'marker': {'color': 'yellow'}}
 NZ_Macro = {'x': NZ.index, 'y': NZ, 'name': 'New Zealand', 'marker': {'color': 'turquoise'}}
 CN_Macro = {'x': CN.index, 'y': CN, 'name': 'China', 'marker': {'color': 'tan'}}
+GlobalAverage_Macro = {'x': globalAverage.index, 'y': globalAverage, 'name': 'Global Average', 'marker': {'color': 'black'}}
 
 #Global Relative Strength Index (i.e. country - globalAverage)
 US_Index = {'x': US_Index_Score.index, 'y': US_Index_Score, 'name': 'United States', 'marker': {'color': 'lime'}}
@@ -220,7 +216,7 @@ NZD_COT = {'x': NZD_CFTC_COT.index, 'y': NZD_CFTC_COT.ActualValue, 'name': 'NZD:
 start = "2007-02-01"
 #Function to get Currencies data
 def getCurrencyPrice(str):
-    currencyPrice = yf.download(str, start, interval='1wk')
+    currencyPrice = yf.download(str, start, interval='1d')
     return currencyPrice
 
 

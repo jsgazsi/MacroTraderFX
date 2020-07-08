@@ -2,3 +2,10 @@ canada_gdp-qq.csv,FALSE
 canada_unemployment-rate.csv,TRUE
 canada_markit-manufacturing-pmi.csv,FALSE
 canada_ivey-pmi.csv,FALSE
+canada_gdp-yy.csv,FALSE
+canada_cpi-yy.csv,FALSE
+canada_ippi-yy.csv,FALSE
+canada_rmpi-yy.csv,FALSE
+canada_capacity-utilization-rate.csv,FALSE
+canada_ivey-pmi-nsa.csv,FALSE
+canada_cmhc-housing-starts.csv,FALSE
