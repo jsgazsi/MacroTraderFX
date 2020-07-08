@@ -1,7 +1,4 @@
-#from main import all_options
 import Macro
-#from main import currency_color
-#from main import graph_height
 import plotly.graph_objects as go 
 
 #graph_height = 200
@@ -395,7 +392,7 @@ def updateMacroDifferential(input_value, input_value2, checkbox):
         yaxis= 'y2',
         )
     )
-
+    
     #return traces
     return {
         'data': traces,
