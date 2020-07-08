@@ -24,20 +24,22 @@ def getData(str, inverse_correlation):
     df['Date'] = pd.to_datetime(df['Date'])   #####.dt.strftime('%Y-%m')
     df = df[['Date', 'ActualValue']]
     df = df.set_index('Date')
+    df = df.iloc[::-1] #Flip df to ascending order
     df.ActualValue = df.apply(lambda x: (x-x.expanding().mean())/x.expanding().std())
-    #df.ActualValue = sp.stats.zscore(df.ActualValue)
-    #data_zscore=df.apply(lambda x: (x-x.expanding().mean())/x.expanding().std())
     #If the indicator is inversely correlated to economic activity (i.e. Unemployment) Correct the correlation by multiplying by -1
     if (inverse_correlation=='TRUE'):
         df = df.multiply(-1)
     return df
 
+#Funtion not needed? Maybe for getting normalized data raw, no inverse correlation checl
 def getNormalized(str):
     df = pd.read_csv(path + str, delimiter='\t')
     df['Date'] = pd.to_datetime(df['Date'])  
     df = df[['Date', 'ActualValue']]
     df = df.set_index('Date')
-    df.ActualValue = sp.stats.zscore(df.ActualValue)
+    df = df.iloc[::-1] #Flip df to ascending order
+    df.ActualValue = df.apply(lambda x: (x-x.expanding().mean())/x.expanding().std())
+    #df.ActualValue = sp.stats.zscore(df.ActualValue) #NOT EXPANDING WINDOW
     #If the indicator is inversely correlated to economic activity (i.e. Unemployment) Correct the correlation by multiplying by -1
     #if (inverse_correlation=='TRUE'):
     #    df = df.multiply(-1)
@@ -49,6 +51,7 @@ def getIndicator(str):
     df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')
     df = df[['Date', 'ActualValue']]
     df = df.set_index('Date')
+    df = df.iloc[::-1] #Flip df to ascending order
     return df
 
 #Function Takes all the Macro indicators in the list, and merges them into a single DataFrame, then averages all the normalized values
