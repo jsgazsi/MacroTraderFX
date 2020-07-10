@@ -222,4 +222,8 @@ def getCurrencyPrice(str):
     currencyPrice = yf.download(str, start, interval='1d')
     return currencyPrice
 
+#### TEMPLATE FOR CREATING Z INDEX FROM CURRENCIES
+#Currency_Z = pd.DataFrame()
+#Currency_Z = currency
+#Currency_Z = Currency_Z.apply(lambda x: (x-x.rolling(200).mean())/x.rolling(200).std())
 
