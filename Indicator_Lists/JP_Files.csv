@@ -1,15 +1,5 @@
-japan_gross-domestic-product-qq.csv,FALSE
-japan_unemployment-rate.csv,TRUE
 japan_nikkei-manufacturing-pmi.csv,FALSE
 japan_nikkei-services-pmi.csv,FALSE
-japan_gross-domestic-product-yy.csv,FALSE
-japan_labor-cash-earnings-yy.csv,FALSE
-japan_overtime-pay-yy.csv,FALSE
-japan_real-wage-yy.csv,FALSE
-japan_domestic-corporate-goods-price-index-mm.csv,FALSE
-japan_domestic-corporate-goods-price-index-yy.csv,FALSE
-japan_national-consumer-price-index-ex-fresh-food-yy.csv,FALSE
-japan_national-consumer-price-index-ex-food-energy-yy.csv,FALSE
 japan_economy-watchers-current-index.csv,FALSE
 japan_economy-watchers-future-index.csv,FALSE
 japan_tankan-large-all-industry-capex.csv,FALSE
@@ -20,8 +10,4 @@ japan_tankan-large-manufacturing-index.csv,FALSE
 japan_industrial-production-yy.csv,FALSE
 japan_leading-index.csv,FALSE
 japan_consumer-confidence-index.csv,FALSE
-japan_household-spending-yy.csv,FALSE
-japan_large-retailers-sales-yy.csv,FALSE
-japan_retail-sales-yy.csv,FALSE
-japan_annualized-housing-starts.csv,FALSE
 japan_housing-starts-yy.csv,FALSE

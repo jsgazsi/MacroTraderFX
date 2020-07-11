@@ -1,6 +1,7 @@
 import os
 import shutil
 import requests
+import time
 import Macro_CSV_Lists
 
 #if os.path.exists('CSV_Data_copy'):
@@ -22,6 +23,7 @@ path = "CSV_Data/{}"
 
 #Grabs all the CSV data from the export links in the Countries List and saves them in the download path directory
 for Country in Countries:
+    time.sleep(5)
     for link in Country:
         print("Downloading... " + link.split('/')[-3] + "_" + link.split('/')[-2] + ".csv")
         r = requests.get(link) # create HTTP response object 

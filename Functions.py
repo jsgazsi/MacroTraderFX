@@ -135,6 +135,8 @@ def updateMacroDifferential(input_value):
         econQuote = Macro.NZ_Index
     elif (quote == 'CNH'):
         econQuote = Macro.CN_Index
+        quote = 'CNY'
+        
 
 
     differential = Macro.createIndexScore(econBase['y'], econQuote['y'])
@@ -145,7 +147,10 @@ def updateMacroDifferential(input_value):
     #Manually Drop previous extreme obviously erronious values from yFinance API
     if(input_value == 'EUR/USD'):
         currency = currency.drop(pd.to_datetime(['2008-03-17', '2012-01-27']))
-
+    elif(input_value == 'EUR/GBP'):
+        currency = currency.drop(pd.to_datetime(['2008-03-17']))
+    elif(input_value == 'EUR/CHF'):
+        currency = currency.drop(pd.to_datetime(['2019-01-1']))
     #Fundamentals Trace
     traces.append(dict(
         x = differential.index,
