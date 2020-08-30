@@ -1,11 +1,18 @@
-canada_gdp-qq.csv,FALSE
-canada_unemployment-rate.csv,TRUE
-canada_markit-manufacturing-pmi.csv,FALSE
-canada_ivey-pmi.csv,FALSE
-canada_gdp-yy.csv,FALSE
-canada_cpi-yy.csv,FALSE
-canada_ippi-yy.csv,FALSE
-canada_rmpi-yy.csv,FALSE
-canada_capacity-utilization-rate.csv,FALSE
-canada_ivey-pmi-nsa.csv,FALSE
-canada_cmhc-housing-starts.csv,FALSE
+Canada Building Permits MoM.csv,FALSE
+Canada Consumer Price Index (CPI) YoY.csv,FALSE
+Canada Core Consumer Price Index (CPI) YoY.csv,FALSE
+Canada Core Retail Sales MoM.csv,FALSE
+Canada Employment Change.csv,FALSE
+Canada Exports.csv,FALSE
+Canada Gross Domestic Product (GDP) MoM.csv,FALSE
+Canada Housing Starts.csv,FALSE
+Canada Imports.csv,FALSE
+Canada Industrial Product Price Index (IPPI) MoM.csv,FALSE
+Canada Ivey Purchasing Managers Index (PMI) n.s.a.csv,FALSE
+Canada Ivey Purchasing Managers Index (PMI).csv,FALSE
+Canada Manufacturing Sales MoM.csv,FALSE
+Canada New Housing Price Index MoM.csv,FALSE
+Canada Raw Materials Price Index (RMPI) YoY.csv,FALSE
+Canada RBC Manufacturing Purchasing Managers Index (PMI).csv,FALSE
+Canada Retail Sales MoM.csv,FALSE
+Canada Wholesale Sales MoM.csv,FALSE

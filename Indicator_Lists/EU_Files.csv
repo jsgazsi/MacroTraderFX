@@ -1,9 +1,20 @@
-european-union_markit-manufacturing-pmi.csv,FALSE
-european-union_markit-services-pmi.csv,FALSE
-european-union_markit-composite-pmi.csv,FALSE
-european-union_sentix-investor-confidence.csv,FALSE
-european-union_zew-indicator-of-economic-sentiment.csv,FALSE
-european-union_economic-sentiment-indicator.csv,FALSE
-european-union_consumer-confidence-indicator.csv,FALSE
-european-union_industrial-confidence-indicator.csv,FALSE
-european-union_business-climate-indicator.csv,FALSE
+European Business and Consumer Survey.csv,FALSE
+European Business Climate.csv,FALSE
+European Consumer Confidence.csv,FALSE
+European Consumer Inflation Expectation.csv,FALSE
+European Consumer Price Index (CPI) YoY.csv,FALSE
+European Core Consumer Price Index (CPI) YoY.csv,FALSE
+European Gross Domestic Product (GDP) YoY.csv,FALSE
+European Industrial Production YoY.csv,FALSE
+European Industrial Sentiment.csv,FALSE
+European Manufacturing Purchasing Managers Index (PMI).csv,FALSE
+European Markit Composite Purchasing Managers Index (PMI).csv,FALSE
+European Private Sector Loans YoY.csv,FALSE
+European Producer Price Index (PPI) YoY.csv,FALSE
+European Retail Sales YoY.csv,FALSE
+European Selling Price Expectations.csv,FALSE
+European Sentix Investor Confidence.csv,FALSE
+European Services Purchasing Managers Index (PMI).csv,FALSE
+European Services Sentiment.csv,FALSE
+European ZEW Economic Sentiment.csv,FALSE
+Germany Unemployment Change.csv,TRUE

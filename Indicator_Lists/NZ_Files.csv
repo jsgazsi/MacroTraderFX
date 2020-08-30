@@ -1,5 +1,11 @@
-new-zealand_gdp-qq.csv,FALSE
-new-zealand_unemployment-rate.csv,TRUE
-new-zealand_anz-activity-outlook.csv,FALSE
-new-zealand_anz-business-confidence.csv,FALSE
-new-zealand_businessnz-manufacturing-index.csv,FALSE
+New Zealand ANZ Business Confidence.csv,FALSE
+New Zealand ANZ Commodity Price Index MoM.csv,FALSE
+New Zealand Building Consents MoM.csv,FALSE
+New Zealand Business NZ Purchasing Managers Index (PMI).csv,FALSE
+New Zealand Credit Card Spending YoY.csv,FALSE
+New Zealand Electronic Card Retail Sales YoY.csv,FALSE
+New Zealand Exports.csv,FALSE
+New Zealand Food Price Index (FPI) MoM.csv,FALSE
+New Zealand Imports.csv,FALSE
+New Zealand REINZ House Price Index (HPI) YoY.csv,FALSE
+New Zealand Visitor Arrivals MoM.csv,FALSE

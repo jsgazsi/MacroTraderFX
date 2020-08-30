@@ -1,4 +1,21 @@
-australia_gdp-qq.csv,FALSE
-australia_unemployment-rate.csv,TRUE
-australia_aig-manufacturing-index.csv,FALSE
-australia_aig-services-index.csv,FALSE
+Australia Building Approvals MoM.csv,FALSE
+Australia Commodity Prices YoY.csv,FALSE
+Australia Employment Change.csv,FALSE
+Australia Exports MoM.csv,FALSE
+Australia HIA New Home Sales MoM.csv,FALSE
+Australia Home Loans MoM.csv,FALSE
+Australia Imports MoM.csv,FALSE
+Australia Manufacturing Purchasing Managers Index (PMI).csv,FALSE
+Australia MI Inflation Expectations.csv,FALSE
+Australia MI Leading Index MoM.csv,FALSE
+Australia New Motor Vehicle Sales MoM.csv,FALSE
+Australia Private House Approvals.csv,FALSE
+Australia Private Sector Credit MoM.csv,FALSE
+Australia Retail Sales MoM.csv,FALSE
+Australia Services Purchasing Managers Index (PMI).csv,FALSE
+Australia Westpac Consumer Sentiment.csv,FALSE
+Australian Industry Group (AIG) Construction Index.csv,FALSE
+Australian Industry Group (AIG) Manufacturing Index.csv,FALSE
+Australian Industry Group (AIG) Services Index.csv,FALSE
+National Australia Bank (NAB) Business Confidence.csv,FALSE
+National Australia Bank (NAB) Business Survey.csv,FALSE

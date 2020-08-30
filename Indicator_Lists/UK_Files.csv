@@ -1,27 +1,26 @@
-united-kingdom_gdp-qq.csv,FALSE
-united-kingdom_unemployment-rate.csv,TRUE
-united-kingdom_markit-manufacturing-pmi.csv,FALSE
-united-kingdom_markit-services-pmi.csv,FALSE
-united-kingdom_gdp-yy.csv,FALSE
-united-kingdom_niesr-gdp-estimate.csv,FALSE
-united-kingdom_average-weekly-earnings-regular-pay.csv,FALSE
-united-kingdom_average-weekly-earnings-total-pay.csv,FALSE
-united-kingdom_claimant-count-change.csv,TRUE
-united-kingdom_core-cpi-yy.csv,FALSE
-united-kingdom_cpi-yy.csv,FALSE
-united-kingdom_ppi-output-yy.csv,FALSE
-united-kingdom_rpi-yy.csv,FALSE
-united-kingdom_business-investment-yy.csv,FALSE
-united-kingdom_construction-output-yy.csv,FALSE
-united-kingdom_industrial-production-yy.csv,FALSE
-united-kingdom_manufacturing-production-yy.csv,FALSE
-united-kingdom_markit-construction-pmi.csv,FALSE
-united-kingdom_core-retail-sales-yy.csv,FALSE
-united-kingdom_gfk-consumer-confidence.csv,FALSE
-united-kingdom_index-of-services.csv,FALSE
-united-kingdom_retail-sales-yy.csv,FALSE
-united-kingdom_boe-mortgage-approvals.csv,FALSE
-united-kingdom_halifax-house-price-index-yy.csv,FALSE
-united-kingdom_house-price-index-yy.csv,FALSE
-united-kingdom_rics-house-price-balance.csv,FALSE
-united-kingdom_bba-mortgage-approvals.csv,FALSE
+United Kingdom Business Investment YoY.csv,FALSE
+United Kingdom CBI Distributive Trades Survey.csv,FALSE
+United Kingdom CBI Industrial Trends Orders.csv,FALSE
+United Kingdom Claimant Count Change.csv,TRUE
+United Kingdom Composite Purchasing Managers' Index.csv,FALSE
+United Kingdom Construction Purchasing Managers Index (PMI).csv,FALSE
+United Kingdom Consumer Price Index (CPI) YoY.csv,FALSE
+United Kingdom Core Consumer Price Index (CPI) YoY.csv,FALSE
+United Kingdom Core Producer Price Index (PPI) Output YoY.csv,FALSE
+United Kingdom Core Retail Sales YoY.csv,FALSE
+United Kingdom GfK Consumer Confidence.csv,FALSE
+United Kingdom Gross Domestic Product (GDP) YoY.csv,FALSE
+United Kingdom Halifax House Price Index (HPI) YoY.csv,FALSE
+United Kingdom Industrial Production YoY.csv,FALSE
+United Kingdom Manufacturing Production YoY.csv,FALSE
+United Kingdom Manufacturing Purchasing Managers Index (PMI).csv,FALSE
+United Kingdom Mortgage Approvals.csv,FALSE
+United Kingdom Mortgage Lending.csv,FALSE
+United Kingdom Nationwide Consumer Confidence.csv,FALSE
+United Kingdom Nationwide HPI YoY.csv,FALSE
+United Kingdom Producer Price Index (PPI) Input YoY.csv,FALSE
+United Kingdom Producer Price Index (PPI) Output YoY.csv,FALSE
+United Kingdom Retail Price Index (RPI) YoY.csv,FALSE
+United Kingdom Retail Sales YoY.csv,FALSE
+United Kingdom Services Purchasing Managers Index (PMI).csv,FALSE
+Bank of England (BoE) Consumer Credit.csv,FALSE

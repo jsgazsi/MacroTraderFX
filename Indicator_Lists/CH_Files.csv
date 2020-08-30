@@ -1,4 +1,7 @@
-switzerland_gdp-qq.csv,FALSE
-switzerland_unemployment-rate.csv,TRUE
-switzerland_procurech-manufacturing-pmi.csv,FALSE
-switzerland_kof-economic-barometer.csv,FALSE
+Switzerland Consumer Price Index (CPI) YoY.csv,FALSE
+Switzerland KOF Leading Indicators.csv,FALSE
+Switzerland procure.ch Purchasing Managers Index (PMI).csv,FALSE
+Switzerland Producer Price Index (PPI) YoY.csv,FALSE
+Switzerland Retail Sales YoY.csv,FALSE
+Switzerland Unemployment Rate s.a..csv,TRUE
+Switzerland ZEW Expectations.csv,FALSE

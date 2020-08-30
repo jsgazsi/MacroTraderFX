@@ -1,27 +1,23 @@
-japan_gross-domestic-product-qq.csv,FALSE
-japan_unemployment-rate.csv,TRUE
-japan_nikkei-manufacturing-pmi.csv,FALSE
-japan_nikkei-services-pmi.csv,FALSE
-japan_gross-domestic-product-yy.csv,FALSE
-japan_labor-cash-earnings-yy.csv,FALSE
-japan_overtime-pay-yy.csv,FALSE
-japan_real-wage-yy.csv,FALSE
-japan_domestic-corporate-goods-price-index-mm.csv,FALSE
-japan_domestic-corporate-goods-price-index-yy.csv,FALSE
-japan_national-consumer-price-index-ex-fresh-food-yy.csv,FALSE
-japan_national-consumer-price-index-ex-food-energy-yy.csv,FALSE
-japan_economy-watchers-current-index.csv,FALSE
-japan_economy-watchers-future-index.csv,FALSE
-japan_tankan-large-all-industry-capex.csv,FALSE
-japan_coincident-index.csv,FALSE
-japan_tankan-large-manufacturing-outlook.csv,FALSE
-japan_tankan-large-non-manufacturing-index.csv,FALSE
-japan_tankan-large-manufacturing-index.csv,FALSE
-japan_industrial-production-yy.csv,FALSE
-japan_leading-index.csv,FALSE
-japan_consumer-confidence-index.csv,FALSE
-japan_household-spending-yy.csv,FALSE
-japan_large-retailers-sales-yy.csv,FALSE
-japan_retail-sales-yy.csv,FALSE
-japan_annualized-housing-starts.csv,FALSE
-japan_housing-starts-yy.csv,FALSE
+Japan All Industries Activity Index MoM.csv,FALSE
+Japan Capacity Utilization MoM.csv,FALSE
+Japan Coincident Indicator MoM.csv,FALSE
+Japan Construction Orders YoY.csv,FALSE
+Japan Core Machinery Orders YoY.csv,FALSE
+Japan Economy Watchers Current Index.csv,FALSE
+Japan Exports YoY.csv,FALSE
+Japan Household Confidence.csv,FALSE
+Japan Household Spending YoY.csv,FALSE
+Japan Housing Starts YoY.csv,FALSE
+Japan Imports YoY.csv,FALSE
+Japan Industrial Production MoM.csv,FALSE
+Japan Jobs applications ratio.csv,FALSE
+Japan Leading Index.csv,FALSE
+Japan Machine Tool Orders YoY.csv,FALSE
+Japan Manufacturing Purchasing Managers Index (PMI).csv,FALSE
+Japan National Consumer Price Index (CPI) YoY.csv,FALSE
+Japan National Core Consumer Price Index (CPI) YoY.csv,FALSE
+Japan Producer Price Index (PPI) YoY.csv,FALSE
+Japan Retail Sales YoY.csv,FALSE
+Japan Reuters Tankan Index.csv,FALSE
+Japan Services Purchasing Managers' Index.csv,FALSE
+Japan Tertiary Industry Activity Index MoM.csv,FALSE

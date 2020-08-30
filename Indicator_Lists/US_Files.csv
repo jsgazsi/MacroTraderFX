@@ -1,15 +1,49 @@
-united-states_ism-manufacturing-pmi.csv,FALSE
-united-states_ism-non-manufacturing-pmi.csv,FALSE
-united-states_markit-composite-pmi.csv,FALSE
-united-states_markit-manufacturing-pmi.csv,FALSE
-united-states_markit-services-pmi.csv,FALSE
-united-states_consumer-confidence-index.csv,FALSE
-united-states_michigan-consumer-expectations.csv,FALSE
-united-states_michigan-consumer-sentiment.csv,FALSE
-united-states_building-permits.csv,FALSE
-united-states_capacity-utilization.csv,FALSE
-united-states_michigan-current-conditions.csv,FALSE
-united-states_existing-home-sales.csv,FALSE
-united-states_housing-starts.csv,FALSE
-united-states_new-home-sales.csv,FALSE
-united-states_pending-home-sales-index.csv,FALSE
+United States All Car Sales.csv,FALSE
+United States Building Permits.csv,FALSE
+United States Business Inventories MoM.csv,FALSE
+United States Capacity Utilization Rate.csv,FALSE
+United States CB Consumer Confidence.csv,FALSE
+United States Chicago Purchasing Managers Index (PMI).csv,FALSE
+United States Construction Spending MoM.csv,FALSE
+United States Consumer Price Index (CPI) YoY.csv,FALSE
+United States Core Consumer Price Index (CPI) YoY.csv,FALSE
+United States Core PCE Price Index YoY.csv,FALSE
+United States Core Producer Price Index (PPI) YoY.csv,FALSE
+United States Core Retail Sales MoM.csv,FALSE
+United States Dallas Fed Services Revenues.csv,FALSE
+United States Dallas Federal Reserve Mfg Business Index.csv,FALSE
+United States Durables Excluding Defense MoM.csv,FALSE
+United States Existing Home Sales.csv,FALSE
+United States Factory Orders ex Transportation MoM.csv,FALSE
+United States Factory Orders MoM.csv,FALSE
+United States House Price Index (HPI) MoM.csv,FALSE
+United States Housing Starts.csv,FALSE
+United States Industrial Production MoM.csv,FALSE
+United States ISM Manufacturing New Orders Index.csv,FALSE
+United States ISM Manufacturing PMI.csv,FALSE
+United States ISM Non-Manufacturing PMI.csv,FALSE
+United States KC Federal Reserve Composite Index.csv,FALSE
+United States KC Federal Reserve Manufacturing Index.csv,FALSE
+United States Manufacturing Production MoM.csv,FALSE
+United States Manufacturing Purchasing Managers Index (PMI).csv,FALSE
+United States Markit Composite PMI.csv,FALSE
+United States Michigan Consumer Expectations.csv,FALSE
+United States Michigan Consumer Sentiment.csv,FALSE
+United States Michigan Current Conditions.csv,FALSE
+United States Michigan Inflation Expectations.csv,FALSE
+United States NAHB Housing Market Index.csv,FALSE
+United States New Home Sales.csv,FALSE
+United States NFIB Small Business Optimism.csv,FALSE
+United States Nonfarm Payrolls.csv,FALSE
+United States NY Empire State Manufacturing Index.csv,FALSE
+United States Pending Home Sales Index.csv,FALSE
+United States Personal Spending MoM.csv,FALSE
+United States Philadelphia Federal Reserve Manufacturing Index.csv,FALSE
+United States Producer Price Index (PPI) YoY.csv,FALSE
+United States Redbook YoY.csv,FALSE
+United States Retail Sales Ex Gas Autos MoM.csv,FALSE
+United States Retail Sales MoM.csv,FALSE
+United States Richmond Manufacturing Index.csv,FALSE
+United States Services Purchasing Managers Index (PMI).csv,FALSE
+United States Total Vehicle Sales.csv,FALSE
+United States Wholesale Inventories MoM.csv,FALSE
