@@ -39,14 +39,15 @@ def MoM_to_Index(df):
     return df
 
 def Simple_YoY_Conversion(df):
-    df = df.Value.pct_change(12) * 100
+    df.Value = df.Value.pct_change(12) * 100
     df = df.round(2)
     return df
 
 def MoM_to_YoY(df):
     df = MoM_to_Index(df)
-    df.Value = df.Value.pct_change(12) * 100
-    df = df.round(2)
+    df = Simple_YoY_Conversion(df)
+    #df.Value = df.Value.pct_change(12) * 100
+    #df = df.round(2)
     return df
 
 #This function gets the data for an economic indicator (e.g. GDP, Unemployment), and normalizes the data to it's Standard Score (Z-Score))
