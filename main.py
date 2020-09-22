@@ -5,6 +5,7 @@ from dash.dependencies import Input, Output
 import plotly.graph_objects as go 
 import Macro
 import Functions
+import dash_defer_js_import as dji
 
 
 #MacroTraderFX Dashboard
@@ -187,6 +188,9 @@ app.layout = html.Div([
     dcc.Graph(id='IntRates', config={'scrollZoom': True}),
 
     
+    html.Article(dji.Import(id="Retail Sentiment", src="https://widgets.myfxbook.com/scripts/fxOutlook.js?type=1&symbols=,1,2,3,4,5,6,7,8,9,10,11,12,13,14,17,20,24,25,26,27,28,29,46,47,48,49,103,107"))
+   
+   
 ])
 
 #Callback for MacroScore, Macroeconomic Z-Scores
