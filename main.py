@@ -7,10 +7,12 @@ import Macro
 import Functions
 
 
-
+#Link to myfxbook
 external_scripts = [
     {'src': 'http://widgets.myfxbook.com/scripts/fxOutlook.js?type=1&symbols=,1,2,3,' }
 ]
+
+
 
 
 
