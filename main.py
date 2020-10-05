@@ -5,25 +5,29 @@ from dash.dependencies import Input, Output
 import plotly.graph_objects as go 
 import Macro
 import Functions
-#import dash_defer_js_import as dji
+
+
 
 external_scripts = [
-    'https://widgets.myfxbook.com/scripts/fxOutlook.js?type=1&symbols=,1', 
+    {'src': 'http://widgets.myfxbook.com/scripts/fxOutlook.js?type=1&symbols=,1,2,3,' }
 ]
+
 
 
 #MacroTraderFX Dashboard
 
-app = dash.Dash(__name__, external_scripts=external_scripts)
+app = dash.Dash(__name__,external_scripts=external_scripts)
 app.config.suppress_callback_exceptions = True
+app.scripts.config.serve_locally = True
+
 server = app.server
+
+
 
 app.title = 'MacroTrader'
 
 
 app.layout = html.Div([ 
-   
-   
 
     #Header
     html.H1(
@@ -42,6 +46,7 @@ app.layout = html.Div([
         'textAlign': 'center',
         'color': '#7FDBFF'}
     ),
+
 
     #Radio Button to select Macro Z-Score or Macro Index
     #dcc.RadioItems(id='radio_button_Macro_View',
@@ -195,6 +200,7 @@ app.layout = html.Div([
     ),
     dcc.Graph(id='IntRates', config={'scrollZoom': True}),
 
+   
 
 ])
 
