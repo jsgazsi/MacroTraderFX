@@ -65,6 +65,8 @@ def createCountryHelix(list):
         merged = pd.merge(merged, indicator, right_index=True, left_index=True, how = 'outer')
     merged = merged.ffill(axis=0) 
     average = merged.mean(axis=1)
+    #!!!!!  EXPERIMENTAL !!!!!
+    average = average.rolling(window=16).mean()
     return average
 
 def createGlobalAverage(economies):
