@@ -26,6 +26,7 @@ def getData(str, inverse_correlation):
     df = df.set_index('Date')
     df = df.iloc[::-1] #Flip df to ascending order
     df.ActualValue = df.apply(lambda x: (x-x.expanding().mean())/x.expanding().std())
+    #df.ActualValue = df.apply(lambda x: (x-x.rolling(36).mean())/x.rolling(36).std())
     #If the indicator is inversely correlated to economic activity (i.e. Unemployment) Correct the correlation by multiplying by -1
     if (inverse_correlation=='TRUE'):
         df = df.multiply(-1)
