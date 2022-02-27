@@ -140,7 +140,7 @@ def updateMacroDifferential(input_value):
 
 
     differential = Macro.createIndexScore(econBase['y'], econQuote['y'])
-    name = econBase['name'] + " VS " + econQuote['name'] + " Fundamentals"
+    name = econBase['name'] + " VS " + econQuote['name'] #+ " Economies"
     marker = econBase['marker']
     currency = Macro.getCurrencyPrice(base + quote + '=X')
     currencyName = input_value + " Price"

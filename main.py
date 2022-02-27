@@ -9,7 +9,8 @@ import Functions
 
 #Link to myfxbook
 external_scripts = [
-    {'src': 'http://widgets.myfxbook.com/scripts/fxOutlook.js?type=1&symbols=,1,2,3,' }
+    #{'src': 'http://widgets.myfxbook.com/scripts/fxOutlook.js?type=1&symbols=,1,2,3,' }
+    {'src': 'https://widgets.myfxbook.com/scripts/fxOutlook.js?type=1&symbols=,1,2,3,4,5,6,7,8,9,10,11,12,13,14,17,18,20,24,26,27,28,29,47,48,49,103,107' }
 ]
 
 
@@ -62,7 +63,7 @@ app.layout = html.Div([
     
 
     #General Macro Z-Score Section
-    html.Label('Macroeconomic Z-Scores'),
+    html.Label('Macroeconomic Z-Scores (Composite of Multiple Macroeconomic Indicators)'),
     dcc.Dropdown(id='dd_MacroScore', style={'width': '100%'},
         options=[
             {'label': 'United States', 'value': 'US_Macro'},
@@ -82,7 +83,7 @@ app.layout = html.Div([
     dcc.Graph(id='MacroScore', config={'scrollZoom': True}),
 
     #Macro Indexes Section (Country VS. Rest of World Global Avg.)
-    html.Label('Macro Index (i.e. Country vs Global Average)'),
+    html.Label('Macro Index (Country vs Global Average: Avg = 0-line)'),
     dcc.Dropdown(id='dd_MacroIndex', style={'width': '100%'},
         options=[
             {'label': 'United States', 'value': 'US_Index'},
@@ -101,7 +102,7 @@ app.layout = html.Div([
     dcc.Graph(id='MacroIndex', config={'scrollZoom': True}),
 
     #Individual Economony Comparision with Currency Prices Section
-    html.Div([html.Label('Economy Differentials')]),
+    html.Div([html.Label('Economy Differentials (Economy vs Economy w/ Currency Conversion Rate)')]),
     dcc.Dropdown(id='dd_MacroIndexDiff_1', style={'display': 'inline-block', 'width': '51%'},
         options=[
             {'label': 'EURUSD', 'value': 'EUR/USD'},
@@ -202,7 +203,7 @@ app.layout = html.Div([
     ),
     dcc.Graph(id='IntRates', config={'scrollZoom': True}),
 
-   
+   html.Label('Retail Trader Positioning'),
 
 ])
 
