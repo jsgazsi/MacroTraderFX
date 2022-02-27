@@ -5,6 +5,7 @@ from dash.dependencies import Input, Output
 import plotly.graph_objects as go 
 import Macro
 import Functions
+import os
 
 
 #Link to myfxbook
